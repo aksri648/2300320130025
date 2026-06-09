@@ -1,4 +1,4 @@
-#Stage1
+## Stage1
 
 # Notification Platform REST API Design
 
