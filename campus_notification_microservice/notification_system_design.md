@@ -484,7 +484,7 @@ Notification Metadata-> SQS (AWS)/NOTIFICATION SERVICE ->USER PHONE
 
 
 
-#STAGE 2 
+## STAGE 2 
 I will use SQL based persistent schema because the notification system is entirely based on user details and using SQL schema we can extract strctured details easily and very fast as compare to NoSQL. We will also get validation of the fetched user details as well.
 
 As the data volume increases, problem that will arise are the following:
@@ -501,11 +501,11 @@ If the cache DB does not contains the User details we will fetch it from DB usin
 We can also implement a messaging queue service like RabbitMQ/Kafka that will take Request and process it slowing in the background ensuring our DB does not get overloaded with requests.
 
 
-#Stage 3
+## Stage 3
 
 This query is not accurate.It is slow because it checks each record iteratively and is very slow operation.Adding indexes can help in increasing speed of Read operations however it will not make a big difference if the DB is very huge.
 
-#Stage 4
+## Stage 4
 
 The DB is getting hit with every request and thus getting overwhelmed.I will suggest two solutions for the problem.
 
@@ -521,7 +521,7 @@ Tradeoffs:
   2) Expensive infrastructure 
   3) There may be increase in latency of getting API responses.
 
-#Stage 5
+## Stage 5
 
 The problem is we have not used try and except with this code so that when the first function fails all the other functions fail cascadely manner and thus results in whole failure. We can implement Error handling techniques to ensure that if a functions fails to get response we can close the operation gracefully.
 
