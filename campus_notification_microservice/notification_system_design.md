@@ -543,7 +543,7 @@ function notifyall(students_ids:array,message:string):
           return "Process Failed"
 
 
-#Stage 6
+## Stage 6
 
 
 As the new notifications will keep coming we will use an doubly ended queue based data strcture which will store top 10 response and whatever new response comes we will add it to end and remove the first response immediately. This will be like a using a queue which uses FIFO architecture.
